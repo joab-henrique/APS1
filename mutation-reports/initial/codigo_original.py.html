@@ -1,0 +1,320 @@
+<html><body><h1>codigo_original.py</h1>Killed 24 out of 53 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -4,7 +4,7 @@
+ 
+ 
+ class Status(Enum):
+-    APPROVED = "APPROVED"
++    APPROVED = "XXAPPROVEDXX"
+     REJECTED = "REJECTED"
+     MANUAL_REVIEW = "MANUAL_REVIEW"
+ 
+</pre><h3>Mutant 2</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -4,7 +4,7 @@
+ 
+ 
+ class Status(Enum):
+-    APPROVED = "APPROVED"
++    APPROVED = None
+     REJECTED = "REJECTED"
+     MANUAL_REVIEW = "MANUAL_REVIEW"
+ 
+</pre><h3>Mutant 3</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -5,7 +5,7 @@
+ 
+ class Status(Enum):
+     APPROVED = "APPROVED"
+-    REJECTED = "REJECTED"
++    REJECTED = "XXREJECTEDXX"
+     MANUAL_REVIEW = "MANUAL_REVIEW"
+ 
+ 
+</pre><h3>Mutant 4</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -5,7 +5,7 @@
+ 
+ class Status(Enum):
+     APPROVED = "APPROVED"
+-    REJECTED = "REJECTED"
++    REJECTED = None
+     MANUAL_REVIEW = "MANUAL_REVIEW"
+ 
+ 
+</pre><h3>Mutant 5</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -6,7 +6,7 @@
+ class Status(Enum):
+     APPROVED = "APPROVED"
+     REJECTED = "REJECTED"
+-    MANUAL_REVIEW = "MANUAL_REVIEW"
++    MANUAL_REVIEW = "XXMANUAL_REVIEWXX"
+ 
+ 
+ @dataclass(frozen=True)
+</pre><h3>Mutant 6</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -6,7 +6,7 @@
+ class Status(Enum):
+     APPROVED = "APPROVED"
+     REJECTED = "REJECTED"
+-    MANUAL_REVIEW = "MANUAL_REVIEW"
++    MANUAL_REVIEW = None
+ 
+ 
+ @dataclass(frozen=True)
+</pre><h3>Mutant 11</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -28,7 +28,7 @@
+     review_reasons = []
+ 
+     # Rule 1 - Age
+-    if age < 16:
++    if age <= 16:
+         rejection_reasons.append("Applicant is younger than the minimum age.")
+     elif age <= 17:
+         review_reasons.append("Applicant is under 18 and requires manual review.")
+</pre><h3>Mutant 12</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -28,7 +28,7 @@
+     review_reasons = []
+ 
+     # Rule 1 - Age
+-    if age < 16:
++    if age < 17:
+         rejection_reasons.append("Applicant is younger than the minimum age.")
+     elif age <= 17:
+         review_reasons.append("Applicant is under 18 and requires manual review.")
+</pre><h3>Mutant 15</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -30,7 +30,7 @@
+     # Rule 1 - Age
+     if age < 16:
+         rejection_reasons.append("Applicant is younger than the minimum age.")
+-    elif age <= 17:
++    elif age <= 18:
+         review_reasons.append("Applicant is under 18 and requires manual review.")
+ 
+     # Rule 2 - GPA
+</pre><h3>Mutant 17</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -34,7 +34,7 @@
+         review_reasons.append("Applicant is under 18 and requires manual review.")
+ 
+     # Rule 2 - GPA
+-    if gpa < 6.0:
++    if gpa <= 6.0:
+         rejection_reasons.append("GPA is below the minimum required.")
+     elif gpa < 7.0:
+         review_reasons.append("GPA is in the manual review range.")
+</pre><h3>Mutant 23</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -40,7 +40,7 @@
+         review_reasons.append("GPA is in the manual review range.")
+ 
+     # Rule 3 - Attendance
+-    if attendance_rate < 75.0:
++    if attendance_rate <= 75.0:
+         rejection_reasons.append("Attendance rate is below the minimum required.")
+     elif attendance_rate < 80.0:
+         review_reasons.append("Attendance rate is in the manual review range.")
+</pre><h3>Mutant 24</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -40,7 +40,7 @@
+         review_reasons.append("GPA is in the manual review range.")
+ 
+     # Rule 3 - Attendance
+-    if attendance_rate < 75.0:
++    if attendance_rate < 76.0:
+         rejection_reasons.append("Attendance rate is below the minimum required.")
+     elif attendance_rate < 80.0:
+         review_reasons.append("Attendance rate is in the manual review range.")
+</pre><h3>Mutant 33</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -73,7 +73,7 @@
+ 
+ 
+ def _validate_inputs(gpa: float, attendance_rate: float) -> None:
+-    if gpa < 0.0 or gpa > 10.0:
++    if gpa <= 0.0 or gpa > 10.0:
+         raise ValueError("GPA must be between 0 and 10.")
+ 
+     if attendance_rate < 0.0 or attendance_rate > 100.0:
+</pre><h3>Mutant 34</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -73,7 +73,7 @@
+ 
+ 
+ def _validate_inputs(gpa: float, attendance_rate: float) -> None:
+-    if gpa < 0.0 or gpa > 10.0:
++    if gpa < 1.0 or gpa > 10.0:
+         raise ValueError("GPA must be between 0 and 10.")
+ 
+     if attendance_rate < 0.0 or attendance_rate > 100.0:
+</pre><h3>Mutant 35</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -73,7 +73,7 @@
+ 
+ 
+ def _validate_inputs(gpa: float, attendance_rate: float) -> None:
+-    if gpa < 0.0 or gpa > 10.0:
++    if gpa < 0.0 or gpa >= 10.0:
+         raise ValueError("GPA must be between 0 and 10.")
+ 
+     if attendance_rate < 0.0 or attendance_rate > 100.0:
+</pre><h3>Mutant 36</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -73,7 +73,7 @@
+ 
+ 
+ def _validate_inputs(gpa: float, attendance_rate: float) -> None:
+-    if gpa < 0.0 or gpa > 10.0:
++    if gpa < 0.0 or gpa > 11.0:
+         raise ValueError("GPA must be between 0 and 10.")
+ 
+     if attendance_rate < 0.0 or attendance_rate > 100.0:
+</pre><h3>Mutant 39</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -76,7 +76,7 @@
+     if gpa < 0.0 or gpa > 10.0:
+         raise ValueError("GPA must be between 0 and 10.")
+ 
+-    if attendance_rate < 0.0 or attendance_rate > 100.0:
++    if attendance_rate <= 0.0 or attendance_rate > 100.0:
+         raise ValueError("Attendance rate must be between 0 and 100.")
+ 
+ 
+</pre><h3>Mutant 40</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -76,7 +76,7 @@
+     if gpa < 0.0 or gpa > 10.0:
+         raise ValueError("GPA must be between 0 and 10.")
+ 
+-    if attendance_rate < 0.0 or attendance_rate > 100.0:
++    if attendance_rate < 1.0 or attendance_rate > 100.0:
+         raise ValueError("Attendance rate must be between 0 and 100.")
+ 
+ 
+</pre><h3>Mutant 41</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -76,7 +76,7 @@
+     if gpa < 0.0 or gpa > 10.0:
+         raise ValueError("GPA must be between 0 and 10.")
+ 
+-    if attendance_rate < 0.0 or attendance_rate > 100.0:
++    if attendance_rate < 0.0 or attendance_rate >= 100.0:
+         raise ValueError("Attendance rate must be between 0 and 100.")
+ 
+ 
+</pre><h3>Mutant 42</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -76,7 +76,7 @@
+     if gpa < 0.0 or gpa > 10.0:
+         raise ValueError("GPA must be between 0 and 10.")
+ 
+-    if attendance_rate < 0.0 or attendance_rate > 100.0:
++    if attendance_rate < 0.0 or attendance_rate > 101.0:
+         raise ValueError("Attendance rate must be between 0 and 100.")
+ 
+ 
+</pre><h3>Mutant 45</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -80,7 +80,7 @@
+         raise ValueError("Attendance rate must be between 0 and 100.")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     result = evaluate_scholarship(
+         age=18,
+         gpa=8.5,
+</pre><h3>Mutant 46</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -80,7 +80,7 @@
+         raise ValueError("Attendance rate must be between 0 and 100.")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ == "XX__main__XX":
+     result = evaluate_scholarship(
+         age=18,
+         gpa=8.5,
+</pre><h3>Mutant 47</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -82,7 +82,7 @@
+ 
+ if __name__ == "__main__":
+     result = evaluate_scholarship(
+-        age=18,
++        age=19,
+         gpa=8.5,
+         attendance_rate=92.0,
+         has_required_courses=True,
+</pre><h3>Mutant 48</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -83,7 +83,7 @@
+ if __name__ == "__main__":
+     result = evaluate_scholarship(
+         age=18,
+-        gpa=8.5,
++        gpa=9.5,
+         attendance_rate=92.0,
+         has_required_courses=True,
+         disciplinary_record=False
+</pre><h3>Mutant 49</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -84,7 +84,7 @@
+     result = evaluate_scholarship(
+         age=18,
+         gpa=8.5,
+-        attendance_rate=92.0,
++        attendance_rate=93.0,
+         has_required_courses=True,
+         disciplinary_record=False
+     )
+</pre><h3>Mutant 50</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -85,7 +85,7 @@
+         age=18,
+         gpa=8.5,
+         attendance_rate=92.0,
+-        has_required_courses=True,
++        has_required_courses=False,
+         disciplinary_record=False
+     )
+     print(result)
+</pre><h3>Mutant 51</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -86,6 +86,6 @@
+         gpa=8.5,
+         attendance_rate=92.0,
+         has_required_courses=True,
+-        disciplinary_record=False
++        disciplinary_record=True
+     )
+     print(result)
+</pre><h3>Mutant 52</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -81,11 +81,5 @@
+ 
+ 
+ if __name__ == "__main__":
+-    result = evaluate_scholarship(
+-        age=18,
+-        gpa=8.5,
+-        attendance_rate=92.0,
+-        has_required_courses=True,
+-        disciplinary_record=False
+-    )
++    result = None
+     print(result)
+</pre><h3>Mutant 53</h3><pre>--- codigo_original.py
++++ codigo_original.py
+@@ -88,4 +88,4 @@
+         has_required_courses=True,
+         disciplinary_record=False
+     )
+-    print(result)
++    print(None)
+</pre></body></html>
